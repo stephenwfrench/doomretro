@@ -508,7 +508,7 @@ static void G_SetInitialWeapon(player_t *player)
     player->ammo[am_clip] = initial_bullets;
 	player->ammo[am_shell] = initial_shells;
 
-    if ((!initial_bullets && weaponinfo[wp_pistol].ammo != am_noammo) && (!initial_shells && weaponinfo[wp_shotgun].ammo != am_noammo))
+    if ((!initial_bullets && weaponinfo[wp_pistol].ammo != am_noammo) || (!initial_shells && weaponinfo[wp_shotgun].ammo != am_noammo))
     {
         player->readyweapon = wp_fist;
         player->pendingweapon = wp_fist;
@@ -1127,7 +1127,7 @@ void G_ScreenShot(void)
 int pars[5][10] =
 {
     { 0 },
-    { 0,  30,  75, 120,  90, 165, 180, 180,  30, 165 },
+    { 0,  90,  75, 120,  90, 165, 180, 180,  30, 165 },
     { 0,  90,  90,  90, 120,  90, 360, 240,  30, 170 },
     { 0,  90,  45,  90, 150,  90,  90, 165,  30, 135 },
 
